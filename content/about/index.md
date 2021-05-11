@@ -20,4 +20,4 @@ A UX Engineer with a focus on space and design.
 
 - Deployment and maintenance
 
-I translate and write articles about tech.
+I write articles about tech and any other interesting things.
