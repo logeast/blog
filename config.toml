@@ -1,8 +1,8 @@
 baseURL = "https://blog.logeast.cn/"
-languageCode = "en-us"
+languageCode = "zh-cn"
 title = "向东_logeast 的网络日志"
 theme = "cactus"
-copyright = "You" # cactus will use title if copyright is not set
+copyright = "logeast" # cactus will use title if copyright is not set
 disqusShortname = "example" # Used when comments is enabled. Cactus will use site title if not set
 # googleAnalytics = "UA-1234-5"
 
