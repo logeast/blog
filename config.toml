@@ -1,4 +1,4 @@
-baseURL = "https://blog.logeast.cn/"
+baseURL = "https://logeast.github.io/"
 languageCode = "en-us"
 title = "向东_logeast 的网络日志"
 theme = "cactus"
