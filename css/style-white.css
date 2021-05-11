@@ -464,7 +464,7 @@
     color: #383838;
     font-display: swap;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     font-family: "JetBrains Mono", monospace;
     line-height: 1.725;
     text-rendering: geometricPrecision;
@@ -1065,7 +1065,7 @@
     margin-right: 16px;
     min-width: 100px;
     color: #666;
-    font-size: 14px;
+    font-size: 16px;
   }
   @media (min-width: 480px) {
     .post-list .post-item {
@@ -1245,7 +1245,7 @@
     margin-right: 16px;
     min-width: 100px;
     color: #666;
-    font-size: 14px;
+    font-size: 16px;
   }
   @media (min-width: 480px) {
     #archive .post-list .post-item {
