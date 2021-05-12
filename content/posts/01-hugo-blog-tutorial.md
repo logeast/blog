@@ -111,5 +111,14 @@ jobs:
 
 Action 会在 `main` 分支提交时自动触发部署，并自动创建一个名为 `gh-pages` 的分支，我们的打包后的站点就在该分支上。
 
+![image](https://user-images.githubusercontent.com/26041539/117929672-a8195780-b32f-11eb-900f-e3da6b8119c3.png)
+
+如上图所示，打开 创建的 blog 仓库，进入设置页面并选择 pages 菜单，然后选择 `gh-pages` 分支，目录选择为 root。
+
+至此，网站部署完成，访问 [https://<USERNAME>.github.io/blog/](https://logeast.github.io/blog/) 即可看到部署成功的站点了。
 
 ### （可选）绑定域名
+
+也可绑定自己的域名，将经过解析的域名填入域名输入框，确认后会生成 CNAME 文件。有一个问题时候每次部署会清空 gh-pages 下的问题导致绑定失败，一种可行的方案是在 main 分支新增 './public/` 目录，将 CNAME 移动到该目录下，以使得 CNAME 得以保存。
+
+现在，可以通过自己的域名访问了。这里是我的博客源码 [向东_logeast 的网络日志](https://blog.logeast.cn/)，欢迎访问。
