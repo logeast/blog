@@ -20,16 +20,96 @@ brew install hugo
 hugo version
 ```
 
-## 创建站点并选择主题
+## 创建站点
 
-## 添加文档
+```bash
+hugo new site blog
+```
+上面的指令将会创建一个名为 `blog` 的站点。
+
+### 选择主题
+访问 [themes.gohugo.io](https://themes.gohugo.io/) 站点，选择喜欢的主题，下面以 [cactus](https://themes.gohugo.io/hugo-theme-cactus/) 主题为例。
+
+```bash
+cd blog
+git init
+git clone https://github.com/monkeyWzr/hugo-theme-cactus.git themes/cactus
+```
+
+更新 `./blog/config.toml` 文件，指定主题。
+
+```bash
+# config.toml
+
+theme = "cactus"
+```
+
+或者直接将 `./blog/themes/cactus/config.toml` 拷贝到 `./blog` 目录下，进行自己的更改。
+
+至此，博客站点搭建成功，运行下面指令测试一下。
+
+```bash
+hugo server
+```
+
+### 添加文档
+可以手动在 `./blog/contnet` 目录下创建内容文件，或者用下面指令创建。
+
+```bash
+hugo new posts/my-first-post.md
+```
+这将会创建 `./blog/contnet/posts/my-first-post.md` 文件，默认处于草稿状态，如果需要发布可以更新为 `draft: false`。
+
+```bash
+---
+title: "My First Post"
+date: 2021-05-11T17:15:14+08:00
+draft: true
+---
+```
 
 ## 部署 GitHub Pages
+我们将采用 `https://<USERNAME>.github.io/<PROJECT>/` 的方式部署我们的博客站点。
+如果希望选择 `https://<USERNAME>.github.io/` 的方式，可以参考 [GitHub Pages 文档](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#user--organization-pages) 。
 
-### 新增 GitHub 仓库
+在 GitHub 新建一个名为 `blog` 的仓库，关联并提交我们 `./blog` 站点既可。
+### 添加 GitHub Action 自动部署
+在 `./blog` 目录下创建 `.github/workflows/gh-pages.yml` 文件，并写入以下内容，然后 push 所有改动到远程仓库。
+
+```bash
+name: github pages
+
+on:
+  push:
+    branches:
+      - main  # Set a branch to deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          # extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+```
+
+Action 会在 `main` 分支提交时自动触发部署，并自动创建一个名为 `gh-pages` 的分支，我们的打包后的站点就在该分支上。
 
 
 ### （可选）绑定域名
-
-
-## 添加 GitHub Action 自动部署
