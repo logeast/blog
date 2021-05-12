@@ -1,8 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>向东_logeast 的网络日志</title><link>https://blog.logeast.cn/</link><description>Recent content on 向东_logeast 的网络日志</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>logeast</copyright><atom:link href="https://blog.logeast.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>https://blog.logeast.cn/about/</link><pubDate>Tue, 11 May 2021 19:27:57 +0800</pubDate><guid>https://blog.logeast.cn/about/</guid><description>Hi 👋 I&amp;rsquo;m 向东_logeast.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>向东_logeast 的网络日志</title><link>https://blog.logeast.cn/</link><description>Recent content on 向东_logeast 的网络日志</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>logeast</copyright><lastBuildDate>Tue, 11 May 2021 17:15:14 +0800</lastBuildDate><atom:link href="https://blog.logeast.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>https://blog.logeast.cn/about/</link><pubDate>Tue, 11 May 2021 19:27:57 +0800</pubDate><guid>https://blog.logeast.cn/about/</guid><description>Hi 👋 I&amp;rsquo;m 向东_logeast.
 A UX Engineer with a focus on space and design.
 JavaScript &amp;amp; frameworks [React, Mini Program, &amp;hellip;]
 HTML &amp;amp; CSS [LESS, Taileind, &amp;hellip;]
 UI for fully responsive design
 Applications with MVC patterns
 Deployment and maintenance
-I write articles about tech and any other interesting things.</description></item></channel></rss>
+I write articles about tech and any other interesting things.</description></item><item><title>使用 Hugo + GitHub Pages + Github Action 搭建个人博客</title><link>https://blog.logeast.cn/posts/01-hugo-blog-tutorial/</link><pubDate>Tue, 11 May 2021 17:15:14 +0800</pubDate><guid>https://blog.logeast.cn/posts/01-hugo-blog-tutorial/</guid><description>安装 Hugo 本文以 macOS 系统为例，安装 Hugo，其他系统可参考 Hugo 安装指南。
+HomeBrew 是 macOS 上的包管理器，我们将用它来安装 Hugo。当然也可以用源码编译的方式安装，这里是安装指引。
+brew install hugo 验证你的安装。
+hugo version 创建站点 hugo new site blog 上面的指令将会创建一个名为 blog 的站点。
+选择主题 访问 themes.gohugo.io 站点，选择喜欢的主题，下面以 cactus 主题为例。
+cd blog git init git clone https://github.com/monkeyWzr/hugo-theme-cactus.git themes/cactus 更新 ./blog/config.toml 文件，指定主题。
+# config.toml theme = &amp;#34;cactus&amp;#34; 或者直接将 ./blog/themes/cactus/config.toml 拷贝到 ./blog 目录下，进行自己的更改。
+至此，博客站点搭建成功，运行下面指令测试一下。
+hugo server 添加文档 可以手动在 ./blog/contnet 目录下创建内容文件，或者用下面指令创建。
+hugo new posts/my-first-post.md 这将会创建 ./blog/contnet/posts/my-first-post.md 文件，默认处于草稿状态，如果需要发布可以更新为 draft: false。
+--- title: &amp;#34;My First Post&amp;#34; date: 2021-05-11T17:15:14+08:00 draft: true --- 部署 GitHub Pages 我们将采用 https://&amp;lt;USERNAME&amp;gt;.</description></item></channel></rss>
