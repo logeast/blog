@@ -52,7 +52,7 @@ weight = 4
   projectsUrl = "https://github.com/logeast" # title link for projects list
 
   # https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
-  dateFormat = "2021-05-11" # default
+  dateFormat = "2006-01-02" # default
 
   # Post page settings
   show_updated = false # default
